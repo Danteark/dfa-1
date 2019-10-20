@@ -3,6 +3,13 @@
 #include<string.h>
 #define MAXLEN 20
 
+/*Given struct represents a node in Deterministic Finite Automata(DFA) 
+  start variable is '1' if the node is start state in the DFA and '0' otherwise
+  final variable is '1' if the node is final state in the DFA and '0' otherwise
+  struct Node_tag *a is a pointer to the next node. It represents the transition we are supposed to take when we encounter 'a'
+  struct Node_tag *b is a pointer to the next node. It represents the transition we are supposed to take when we encounter 'b'
+  struct Node_tag *c is a pointer to the next node. It represents the transition we are supposed to take when we encounter 'c'
+*/
 typedef struct Node_tag{
   int start;
   int final;
@@ -12,7 +19,7 @@ typedef struct Node_tag{
  }Node;
 
 
-
+// making DFA connections with all transitions. 
 Node *makeConnections1(Node *start)
  {
     Node *st = start;
@@ -74,7 +81,8 @@ Node *makeConnections1(Node *start)
   return st;
 
  }
-
+  //function to check is the given string[] is accepted by the DFA or not
+  // returns 1 if DFA accepts string[] and 0 otherwise
   int Check1( char string[] , Node *start )
   {
 	char str_dup[MAXLEN];
@@ -103,7 +111,8 @@ Node *makeConnections1(Node *start)
               return 1;
          
   }
-
+ //input is taken through in1.txt and output is stored in out1.txt
+//sample input file is in the repository
  void main()
  {
     FILE *fpw,*fpr;
