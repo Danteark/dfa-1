@@ -1,0 +1,6 @@
+aabb
+bbaacc
+cbbaa
+dddab
+end
+
